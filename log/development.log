@@ -1,0 +1,1471 @@
+Started GET "/" for 127.0.0.1 at 2018-08-30 14:08:30 +0200
+  
+PG::ConnectionBad (could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (::1) and accepting
+	TCP/IP connections on port 5432?
+could not connect to server: Connection refused (0x0000274D/10061)
+	Is the server running on host "localhost" (127.0.0.1) and accepting
+	TCP/IP connections on port 5432?
+):
+  
+pg-1.1.2-x86 (mingw32) lib/pg.rb:56:in `initialize'
+pg-1.1.2-x86 (mingw32) lib/pg.rb:56:in `new'
+pg-1.1.2-x86 (mingw32) lib/pg.rb:56:in `connect'
+activerecord (5.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:697:in `connect'
+activerecord (5.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:221:in `initialize'
+activerecord (5.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `new'
+activerecord (5.1.6) lib/active_record/connection_adapters/postgresql_adapter.rb:38:in `postgresql_connection'
+activerecord (5.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:759:in `new_connection'
+activerecord (5.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:803:in `checkout_new_connection'
+activerecord (5.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:782:in `try_to_checkout_new_connection'
+activerecord (5.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:743:in `acquire_connection'
+activerecord (5.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:500:in `checkout'
+activerecord (5.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:374:in `connection'
+activerecord (5.1.6) lib/active_record/connection_adapters/abstract/connection_pool.rb:931:in `retrieve_connection'
+activerecord (5.1.6) lib/active_record/connection_handling.rb:116:in `retrieve_connection'
+activerecord (5.1.6) lib/active_record/connection_handling.rb:88:in `connection'
+activerecord (5.1.6) lib/active_record/migration.rb:562:in `connection'
+activerecord (5.1.6) lib/active_record/migration.rb:553:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:26:in `block in call'
+activesupport (5.1.6) lib/active_support/callbacks.rb:97:in `run_callbacks'
+actionpack (5.1.6) lib/action_dispatch/middleware/callbacks.rb:24:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:59:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+  [1m[35m (13.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7098663258866138820)[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Migrating to CreateBlogposts (20180830114953)
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE "blogposts" ("id" bigserial primary key, "title" character varying, "author" character varying, "date" date, "image" character varying, "content" text, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20180830114953"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2018-08-30 12:47:36.626291"], ["updated_at", "2018-08-30 12:47:36.626291"]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(7098663258866138820)[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2018-08-30 15:09:03 +0200
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (9.0ms)
+Completed 200 OK in 88ms (Views: 46.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogpost" for 127.0.0.1 at 2018-08-30 15:09:19 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/blogpost"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 15:09:32 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (46.8ms)
+Completed 200 OK in 11006ms (Views: 10967.7ms | ActiveRecord: 8.0ms)
+
+
+Started GET "/blogposts/new" for 127.0.0.1 at 2018-08-30 15:11:16 +0200
+Processing by BlogpostsController#new as HTML
+  Rendering blogposts/new.html.erb within layouts/application
+  Rendered blogposts/_form.html.erb (55.8ms)
+  Rendered blogposts/new.html.erb within layouts/application (98.7ms)
+Completed 200 OK in 273ms (Views: 235.6ms | ActiveRecord: 3.0ms)
+
+
+Started POST "/blogposts" for 127.0.0.1 at 2018-08-30 15:12:32 +0200
+Processing by BlogpostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XL7BjcA3uU6XKGKJjZ60rp1FpPD0XBIjxKvdDhy7QXBwZZpAm27Mu5v+luq7jd6jSjsxqQdy4Kr+RPImRvYbMw==", "blogpost"=>{"title"=>"How I Started Programming", "author"=>"Bettina", "date(1i)"=>"2018", "date(2i)"=>"8", "date(3i)"=>"30", "image"=>"none", "content"=>"Programming is super addictive. Once you have started, you cannot stop anymore. I recommend everyone to learn programming. "}, "commit"=>"Create Blogpost"}
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[32mINSERT INTO "blogposts" ("title", "author", "date", "image", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "How I Started Programming"], ["author", "Bettina"], ["date", "2018-08-30"], ["image", "none"], ["content", "Programming is super addictive. Once you have started, you cannot stop anymore. I recommend everyone to learn programming. "], ["created_at", "2018-08-30 13:12:32.548736"], ["updated_at", "2018-08-30 13:12:32.548736"]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/blogposts/1
+Completed 302 Found in 11ms (ActiveRecord: 6.0ms)
+
+
+Started GET "/blogposts/1" for 127.0.0.1 at 2018-08-30 15:12:32 +0200
+Processing by BlogpostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogposts/show.html.erb within layouts/application
+  Rendered blogposts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 183ms (Views: 140.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 15:12:36 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.6ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 164ms (Views: 144.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/blogposts/new" for 127.0.0.1 at 2018-08-30 15:12:38 +0200
+Processing by BlogpostsController#new as HTML
+  Rendering blogposts/new.html.erb within layouts/application
+  Rendered blogposts/_form.html.erb (3.0ms)
+  Rendered blogposts/new.html.erb within layouts/application (20.9ms)
+Completed 200 OK in 166ms (Views: 148.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogposts" for 127.0.0.1 at 2018-08-30 15:13:34 +0200
+Processing by BlogpostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"utsriW5MxhhjS71DY1P9BcAdVYeMtIySC1JmYrqRk76WAHBENRWz7W+dSSBVQJcIF2PA3n+afhsxvUlK4NzJ/Q==", "blogpost"=>{"title"=>"Travelling in Zimbabwe", "author"=>"Bettina", "date(1i)"=>"2018", "date(2i)"=>"8", "date(3i)"=>"30", "image"=>"none", "content"=>"Zimbabwe is an amazing country. You can see a lot of elephants, lions and tigers there. Go there and explore! haha."}, "commit"=>"Create Blogpost"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (2.0ms)[0m  [1m[32mINSERT INTO "blogposts" ("title", "author", "date", "image", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "Travelling in Zimbabwe"], ["author", "Bettina"], ["date", "2018-08-30"], ["image", "none"], ["content", "Zimbabwe is an amazing country. You can see a lot of elephants, lions and tigers there. Go there and explore! haha."], ["created_at", "2018-08-30 13:13:34.244312"], ["updated_at", "2018-08-30 13:13:34.244312"]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/blogposts/2
+Completed 302 Found in 13ms (ActiveRecord: 7.0ms)
+
+
+Started GET "/blogposts/2" for 127.0.0.1 at 2018-08-30 15:13:34 +0200
+Processing by BlogpostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering blogposts/show.html.erb within layouts/application
+  Rendered blogposts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 160ms (Views: 138.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 15:13:36 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (3.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 160ms (Views: 138.3ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/blogposts/new" for 127.0.0.1 at 2018-08-30 15:13:38 +0200
+Processing by BlogpostsController#new as HTML
+  Rendering blogposts/new.html.erb within layouts/application
+  Rendered blogposts/_form.html.erb (3.0ms)
+  Rendered blogposts/new.html.erb within layouts/application (22.8ms)
+Completed 200 OK in 195ms (Views: 177.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/blogposts" for 127.0.0.1 at 2018-08-30 15:14:53 +0200
+Processing by BlogpostsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"vfUsiiMIBDPp/zL8WToIL6NXjqPI5Jk0vy0Lqf2WTxSRLndHeFFxxuUpxp9vKWIidCkb+jvKa72FwiSBp9sVVw==", "blogpost"=>{"title"=>"How I Created This Blog", "author"=>"Bettina", "date(1i)"=>"2018", "date(2i)"=>"8", "date(3i)"=>"30", "image"=>"none", "content"=>"Creating this blog started with a major problem: my laptop just could not connect to the database. It was a Windows-specific problem. So: should I buy a Mac?!"}, "commit"=>"Create Blogpost"}
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[32mINSERT INTO "blogposts" ("title", "author", "date", "image", "content", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["title", "How I Created This Blog"], ["author", "Bettina"], ["date", "2018-08-30"], ["image", "none"], ["content", "Creating this blog started with a major problem: my laptop just could not connect to the database. It was a Windows-specific problem. So: should I buy a Mac?!"], ["created_at", "2018-08-30 13:14:53.795149"], ["updated_at", "2018-08-30 13:14:53.795149"]]
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/blogposts/3
+Completed 302 Found in 14ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/blogposts/3" for 127.0.0.1 at 2018-08-30 15:14:53 +0200
+Processing by BlogpostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering blogposts/show.html.erb within layouts/application
+  Rendered blogposts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 145ms (Views: 124.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts/3" for 127.0.0.1 at 2018-08-30 15:18:17 +0200
+Processing by BlogpostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering blogposts/show.html.erb within layouts/application
+  Rendered blogposts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 169ms (Views: 142.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 15:18:22 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 150ms (Views: 129.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 15:19:59 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 162ms (Views: 141.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 15:20:01 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 161ms (Views: 139.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 15:21:13 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 159ms (Views: 138.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 15:21:55 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 157ms (Views: 136.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-30 15:26:13 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/ideas"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 15:28:16 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (1.3ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 153ms (Views: 132.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 15:29:38 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 148ms (Views: 129.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 15:31:38 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 4928ms (Views: 4908.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 15:34:25 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 4838ms (Views: 4819.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 15:34:48 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 5145ms (Views: 5125.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 15:36:50 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 4844ms (Views: 4825.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 15:40:10 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 4799ms (Views: 4779.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 15:49:44 +0200
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (23.1ms)
+Completed 200 OK in 593ms (Views: 556.6ms | ActiveRecord: 4.0ms)
+
+
+Started GET "/blogposts/1/edit" for 127.0.0.1 at 2018-08-30 15:50:02 +0200
+Processing by BlogpostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogposts/edit.html.erb within layouts/application
+  Rendered blogposts/_form.html.erb (27.0ms)
+  Rendered blogposts/edit.html.erb within layouts/application (51.9ms)
+Completed 200 OK in 252ms (Views: 186.5ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/blogposts/1/edit" for 127.0.0.1 at 2018-08-30 15:52:38 +0200
+Processing by BlogpostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogposts/edit.html.erb within layouts/application
+  Rendered blogposts/_form.html.erb (17.0ms)
+  Rendered blogposts/edit.html.erb within layouts/application (37.9ms)
+Completed 200 OK in 202ms (Views: 177.9ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/blogposts/1" for 127.0.0.1 at 2018-08-30 15:53:49 +0200
+Processing by BlogpostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"eZmzxgBTwDY1hnRGUGQOXCIx/C25IHCgR/cREaHIhxwKDncn+rFJlnTVoLOpL62J0RXmAmwb5T+c+fyIevAjyA==", "blogpost"=>{"title"=>"How I Started Programming", "author"=>"Bettina", "date(1i)"=>"2018", "date(2i)"=>"8", "date(3i)"=>"30", "image"=>#<ActionDispatch::Http::UploadedFile:0xc0a4268 @tempfile=#<Tempfile:C:/Users/betti/AppData/Local/Temp/RackMultipart20180830-14040-sl0cxr.jpg>, @original_filename="ProhibitionParty_I.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"blogpost[image]\"; filename=\"ProhibitionParty_I.jpg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"Programming is super addictive. Once you have started, you cannot stop anymore. I recommend everyone to learn programming. "}, "commit"=>"Update Blogpost", "id"=>"1"}
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "blogposts" SET "image" = $1, "updated_at" = $2 WHERE "blogposts"."id" = $3[0m  [["image", "#<ActionDispatch::Http::UploadedFile:0xc0a4268>"], ["updated_at", "2018-08-30 13:53:49.850925"], ["id", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/blogposts/1
+Completed 302 Found in 16ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/blogposts/1" for 127.0.0.1 at 2018-08-30 15:53:49 +0200
+Processing by BlogpostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogposts/show.html.erb within layouts/application
+  Rendered blogposts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 167ms (Views: 143.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 15:53:56 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 172ms (Views: 151.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts/2/edit" for 127.0.0.1 at 2018-08-30 15:54:08 +0200
+Processing by BlogpostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering blogposts/edit.html.erb within layouts/application
+  Rendered blogposts/_form.html.erb (3.0ms)
+  Rendered blogposts/edit.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 182ms (Views: 157.8ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/blogposts/2" for 127.0.0.1 at 2018-08-30 15:54:34 +0200
+Processing by BlogpostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"c3foyzpPR92q0X26od6dz8pUd+EvKFvxJStHvKvkAT+AK19bXLbdJqPb07Mfmq1UXvhQT08AmbtGZcib+JqGTg==", "blogpost"=>{"title"=>"Travelling in Zimbabwe", "author"=>"Bettina", "date(1i)"=>"2018", "date(2i)"=>"8", "date(3i)"=>"30", "image"=>#<ActionDispatch::Http::UploadedFile:0xcc61a70 @tempfile=#<Tempfile:C:/Users/betti/AppData/Local/Temp/RackMultipart20180830-14040-1vk4xdp.JPG>, @original_filename="DSC03167.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"blogpost[image]\"; filename=\"DSC03167.JPG\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"Zimbabwe is an amazing country. You can see a lot of elephants, lions and tigers there. Go there and explore! haha."}, "commit"=>"Update Blogpost", "id"=>"2"}
+  [1m[36mBlogpost Load (1.1ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE "blogposts" SET "image" = $1, "updated_at" = $2 WHERE "blogposts"."id" = $3[0m  [["image", "#<ActionDispatch::Http::UploadedFile:0xcc61a70>"], ["updated_at", "2018-08-30 13:54:34.574052"], ["id", 2]]
+  [1m[35m (0.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/blogposts/2
+Completed 302 Found in 10ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/blogposts/2" for 127.0.0.1 at 2018-08-30 15:54:34 +0200
+Processing by BlogpostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering blogposts/show.html.erb within layouts/application
+  Rendered blogposts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 156ms (Views: 132.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 15:54:36 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (3.1ms)
+Completed 200 OK in 174ms (Views: 155.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts/3/edit" for 127.0.0.1 at 2018-08-30 15:54:41 +0200
+Processing by BlogpostsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering blogposts/edit.html.erb within layouts/application
+  Rendered blogposts/_form.html.erb (4.0ms)
+  Rendered blogposts/edit.html.erb within layouts/application (23.9ms)
+Completed 200 OK in 199ms (Views: 175.0ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/blogposts/3" for 127.0.0.1 at 2018-08-30 15:54:55 +0200
+Processing by BlogpostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xUWsRSXwfWeo5H8JKI73gpte3e71ru8zk1cyxqwYrBN2qQ0ddsP6sagg7yB+wMDtgGlSeUtUj98JASyGT8e5/Q==", "blogpost"=>{"title"=>"How I Created This Blog", "author"=>"Bettina", "date(1i)"=>"2018", "date(2i)"=>"8", "date(3i)"=>"30", "image"=>#<ActionDispatch::Http::UploadedFile:0x983b8c0 @tempfile=#<Tempfile:C:/Users/betti/AppData/Local/Temp/RackMultipart20180830-14040-41gh29.jpg>, @original_filename="atelierfest-158 Kopie.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"blogpost[image]\"; filename=\"atelierfest-158 Kopie.jpg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"Creating this blog started with a major problem: my laptop just could not connect to the database. It was a Windows-specific problem. So: should I buy a Mac?!"}, "commit"=>"Update Blogpost", "id"=>"3"}
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE "blogposts" SET "image" = $1, "updated_at" = $2 WHERE "blogposts"."id" = $3[0m  [["image", "#<ActionDispatch::Http::UploadedFile:0x983b8c0>"], ["updated_at", "2018-08-30 13:54:55.205347"], ["id", 3]]
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/blogposts/3
+Completed 302 Found in 19ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/blogposts/3" for 127.0.0.1 at 2018-08-30 15:54:55 +0200
+Processing by BlogpostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering blogposts/show.html.erb within layouts/application
+  Rendered blogposts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 139ms (Views: 118.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts/3" for 127.0.0.1 at 2018-08-30 15:59:33 +0200
+Processing by BlogpostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering blogposts/show.html.erb within layouts/application
+  Rendered blogposts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 151ms (Views: 126.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 15:59:36 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (30.9ms)
+Completed 500 Internal Server Error in 106ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_url' for #<Blogpost:0xb6a0be8>
+Did you mean?  image
+               image?
+               image=
+               image_was):
+    20:         <td><%= blogpost.title %></td>
+    21:         <td><%= blogpost.author %></td>
+    22:         <td><%= blogpost.date %></td>
+    23:         <td><%= image_tag blogpost.image_url, width: '100px' if blogpost.image.present? %></td>
+    24:         <td><%= blogpost.content %></td>
+    25:         <td><%= link_to 'Show', blogpost %></td>
+    26:         <td><%= link_to 'Edit', edit_blogpost_path(blogpost) %></td>
+  
+app/views/blogposts/index.html.erb:23:in `block in _app_views_blogposts_index_html_erb___399253856_95718612'
+app/views/blogposts/index.html.erb:18:in `_app_views_blogposts_index_html_erb___399253856_95718612'
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:00:41 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 150ms (Views: 129.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts/1" for 127.0.0.1 at 2018-08-30 16:00:54 +0200
+Processing by BlogpostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogposts/show.html.erb within layouts/application
+  Rendered blogposts/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 156ms (Views: 131.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts/2" for 127.0.0.1 at 2018-08-30 16:00:59 +0200
+Processing by BlogpostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering blogposts/show.html.erb within layouts/application
+  Rendered blogposts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 156ms (Views: 129.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts/3/edit" for 127.0.0.1 at 2018-08-30 16:01:03 +0200
+Processing by BlogpostsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering blogposts/edit.html.erb within layouts/application
+  Rendered blogposts/_form.html.erb (3.0ms)
+  Rendered blogposts/edit.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 177ms (Views: 152.5ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/blogposts/3" for 127.0.0.1 at 2018-08-30 16:01:14 +0200
+Processing by BlogpostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"XyOdR3X32lVD5YWsSKcR13ocgsgG2BQKHNDp18yWrknszzwfJsRdg0MhFYUe6Sa4YSsNX7gidOaGhveXL0m7pw==", "blogpost"=>{"title"=>"How I Created This Blog", "author"=>"Bettina", "date(1i)"=>"2018", "date(2i)"=>"8", "date(3i)"=>"30", "image"=>#<ActionDispatch::Http::UploadedFile:0xccba708 @tempfile=#<Tempfile:C:/Users/betti/AppData/Local/Temp/RackMultipart20180830-14040-1vxg0i.jpg>, @original_filename="atelierfest-158 Kopie.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"blogpost[image]\"; filename=\"atelierfest-158 Kopie.jpg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"Creating this blog started with a major problem: my laptop just could not connect to the database. It was a Windows-specific problem. So: should I buy a Mac?!"}, "commit"=>"Update Blogpost", "id"=>"3"}
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "blogposts" SET "image" = $1, "updated_at" = $2 WHERE "blogposts"."id" = $3[0m  [["image", "#<ActionDispatch::Http::UploadedFile:0xccba708>"], ["updated_at", "2018-08-30 14:01:14.930999"], ["id", 3]]
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/blogposts/3
+Completed 302 Found in 23ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/blogposts/3" for 127.0.0.1 at 2018-08-30 16:01:14 +0200
+Processing by BlogpostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering blogposts/show.html.erb within layouts/application
+  Rendered blogposts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 168ms (Views: 145.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:01:20 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 163ms (Views: 143.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts/2/edit" for 127.0.0.1 at 2018-08-30 16:01:23 +0200
+Processing by BlogpostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering blogposts/edit.html.erb within layouts/application
+  Rendered blogposts/_form.html.erb (4.0ms)
+  Rendered blogposts/edit.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 183ms (Views: 159.9ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/blogposts/2" for 127.0.0.1 at 2018-08-30 16:01:38 +0200
+Processing by BlogpostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BVYSaNHNjdyRF95ka6nX7ULPIpjKCKpwSeGCQ5Tc3O72CqX4tzQXJ5gdcG3V7ed21mMFNqogaDoqrw1kx6Jbnw==", "blogpost"=>{"title"=>"Travelling in Zimbabwe", "author"=>"Bettina", "date(1i)"=>"2018", "date(2i)"=>"8", "date(3i)"=>"30", "image"=>#<ActionDispatch::Http::UploadedFile:0xbaf3b58 @tempfile=#<Tempfile:C:/Users/betti/AppData/Local/Temp/RackMultipart20180830-14040-dop0dn.JPG>, @original_filename="DSC03167.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"blogpost[image]\"; filename=\"DSC03167.JPG\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"Zimbabwe is an amazing country. You can see a lot of elephants, lions and tigers there. Go there and explore! haha."}, "commit"=>"Update Blogpost", "id"=>"2"}
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "blogposts" SET "image" = $1, "updated_at" = $2 WHERE "blogposts"."id" = $3[0m  [["image", "#<ActionDispatch::Http::UploadedFile:0xbaf3b58>"], ["updated_at", "2018-08-30 14:01:38.637081"], ["id", 2]]
+  [1m[35m (0.9ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/blogposts/2
+Completed 302 Found in 16ms (ActiveRecord: 2.9ms)
+
+
+Started GET "/blogposts/2" for 127.0.0.1 at 2018-08-30 16:01:38 +0200
+Processing by BlogpostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering blogposts/show.html.erb within layouts/application
+  Rendered blogposts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 152ms (Views: 128.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:01:45 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 167ms (Views: 146.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts/1/edit" for 127.0.0.1 at 2018-08-30 16:01:48 +0200
+Processing by BlogpostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogposts/edit.html.erb within layouts/application
+  Rendered blogposts/_form.html.erb (4.0ms)
+  Rendered blogposts/edit.html.erb within layouts/application (24.9ms)
+Completed 200 OK in 201ms (Views: 175.9ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/blogposts/1" for 127.0.0.1 at 2018-08-30 16:02:13 +0200
+Processing by BlogpostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iTwutRp9u4REHwd75IEMCTa+vNZF7Cqo4mkx33JPbvlvsIgZEhUApwWt6/KV+JH3JWT5FvLh5lu7KEpbKPec7A==", "blogpost"=>{"title"=>"How I Started Programming", "author"=>"Bettina", "date(1i)"=>"2018", "date(2i)"=>"8", "date(3i)"=>"30", "image"=>#<ActionDispatch::Http::UploadedFile:0xcc82728 @tempfile=#<Tempfile:C:/Users/betti/AppData/Local/Temp/RackMultipart20180830-14040-1mjh6nb.jpg>, @original_filename="Fotoshooting Pardy Luki II.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"blogpost[image]\"; filename=\"Fotoshooting Pardy Luki II.jpg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"Programming is super addictive. Once you have started, you cannot stop anymore. I recommend everyone to learn programming. "}, "commit"=>"Update Blogpost", "id"=>"1"}
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE "blogposts" SET "image" = $1, "updated_at" = $2 WHERE "blogposts"."id" = $3[0m  [["image", "#<ActionDispatch::Http::UploadedFile:0xcc82728>"], ["updated_at", "2018-08-30 14:02:13.985841"], ["id", 1]]
+  [1m[35m (8.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/blogposts/1
+Completed 302 Found in 23ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/blogposts/1" for 127.0.0.1 at 2018-08-30 16:02:14 +0200
+Processing by BlogpostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogposts/show.html.erb within layouts/application
+  Rendered blogposts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 162ms (Views: 137.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:02:16 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 172ms (Views: 153.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:03:23 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (32.9ms)
+Completed 500 Internal Server Error in 109ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_url' for #<Blogpost:0xcaa2488>
+Did you mean?  image
+               image?
+               image=
+               image_was):
+    20:         <td><%= blogpost.title %></td>
+    21:         <td><%= blogpost.author %></td>
+    22:         <td><%= blogpost.date %></td>
+    23:         <td><%= image_tag blogpost.image_url, width: '100px' if blogpost.image.present? %></td>
+    24:         <td><%= blogpost.content %></td>
+    25:         <td><%= link_to 'Show', blogpost %></td>
+    26:         <td><%= link_to 'Edit', edit_blogpost_path(blogpost) %></td>
+  
+app/views/blogposts/index.html.erb:23:in `block in _app_views_blogposts_index_html_erb___399253856_106371972'
+app/views/blogposts/index.html.erb:18:in `_app_views_blogposts_index_html_erb___399253856_106371972'
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:04:54 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (31.9ms)
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (The asset "" is not present in the asset pipeline.):
+    20:         <td><%= blogpost.title %></td>
+    21:         <td><%= blogpost.author %></td>
+    22:         <td><%= blogpost.date %></td>
+    23:         <td><%= image_tag blogpost.image, width: '100px' if blogpost.image.present? %></td>
+    24:         <td><%= blogpost.content %></td>
+    25:         <td><%= link_to 'Show', blogpost %></td>
+    26:         <td><%= link_to 'Edit', edit_blogpost_path(blogpost) %></td>
+  
+app/views/blogposts/index.html.erb:23:in `block in _app_views_blogposts_index_html_erb___399253856_97850880'
+app/views/blogposts/index.html.erb:18:in `_app_views_blogposts_index_html_erb___399253856_97850880'
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:06:02 +0200
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (2.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (167.9ms)
+Completed 500 Internal Server Error in 258ms (ActiveRecord: 5.0ms)
+
+
+  
+ActionView::Template::Error (The asset "" is not present in the asset pipeline.):
+    20:         <td><%= blogpost.title %></td>
+    21:         <td><%= blogpost.author %></td>
+    22:         <td><%= blogpost.date %></td>
+    23:         <td><%= image_tag blogpost.image, width: '100px' if blogpost.image.present? %></td>
+    24:         <td><%= blogpost.content %></td>
+    25:         <td><%= link_to 'Show', blogpost %></td>
+    26:         <td><%= link_to 'Edit', edit_blogpost_path(blogpost) %></td>
+  
+app/views/blogposts/index.html.erb:23:in `block in _app_views_blogposts_index_html_erb__269166597_78556320'
+app/views/blogposts/index.html.erb:18:in `_app_views_blogposts_index_html_erb__269166597_78556320'
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:08:33 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (56.8ms)
+Completed 500 Internal Server Error in 132ms (ActiveRecord: 3.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_url' for #<Blogpost:0x97da9c0>
+Did you mean?  image
+               image?
+               image=
+               image_was):
+    20:         <td><%= blogpost.title %></td>
+    21:         <td><%= blogpost.author %></td>
+    22:         <td><%= blogpost.date %></td>
+    23:         <td><%= image_tag blogpost.image_url, width: '100px' if blogpost.image.present? %></td>
+    24:         <td><%= blogpost.content %></td>
+    25:         <td><%= link_to 'Show', blogpost %></td>
+    26:         <td><%= link_to 'Edit', edit_blogpost_path(blogpost) %></td>
+  
+app/views/blogposts/index.html.erb:23:in `block in _app_views_blogposts_index_html_erb__269166597_78630084'
+app/views/blogposts/index.html.erb:18:in `_app_views_blogposts_index_html_erb__269166597_78630084'
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:08:52 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (31.9ms)
+Completed 500 Internal Server Error in 106ms (ActiveRecord: 0.0ms)
+
+
+  
+ActionView::Template::Error (The asset "" is not present in the asset pipeline.):
+    20:         <td><%= blogpost.title %></td>
+    21:         <td><%= blogpost.author %></td>
+    22:         <td><%= blogpost.date %></td>
+    23:         <td><%= image_tag blogpost.image, width: '100px' if blogpost.image.present? %></td>
+    24:         <td><%= blogpost.content %></td>
+    25:         <td><%= link_to 'Show', blogpost %></td>
+    26:         <td><%= link_to 'Edit', edit_blogpost_path(blogpost) %></td>
+  
+app/views/blogposts/index.html.erb:23:in `block in _app_views_blogposts_index_html_erb__269166597_77226060'
+app/views/blogposts/index.html.erb:18:in `_app_views_blogposts_index_html_erb__269166597_77226060'
+Started GET "/blogposts/3" for 127.0.0.1 at 2018-08-30 16:09:59 +0200
+Processing by BlogpostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering blogposts/show.html.erb within layouts/application
+  Rendered blogposts/show.html.erb within layouts/application (28.9ms)
+Completed 500 Internal Server Error in 112ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (The asset "" is not present in the asset pipeline.):
+    17: 
+    18: <p>
+    19:   <strong>Image:</strong>
+    20:   <%= image_tag(@blogpost.image, width:300) if @blogpost.image.present? %>
+    21: </p>
+    22: 
+    23: <p>
+  
+app/views/blogposts/show.html.erb:20:in `_app_views_blogposts_show_html_erb__200582984_81606504'
+Started GET "/blogposts/3" for 127.0.0.1 at 2018-08-30 16:11:59 +0200
+Processing by BlogpostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering blogposts/show.html.erb within layouts/application
+  Rendered blogposts/show.html.erb within layouts/application (28.9ms)
+Completed 500 Internal Server Error in 107ms (ActiveRecord: 2.0ms)
+
+
+  
+ActionView::Template::Error (undefined method `image_url' for #<Blogpost:0xb9d6db0>
+Did you mean?  image
+               image?
+               image=
+               image_was):
+    17: 
+    18: <p>
+    19:   <strong>Image:</strong>
+    20:   <%= image_tag(@blogpost.image_url, width:300) if @blogpost.image.present? %>
+    21: </p>
+    22: 
+    23: <p>
+  
+app/views/blogposts/show.html.erb:20:in `_app_views_blogposts_show_html_erb__200582984_97431744'
+Started GET "/blogposts/3" for 127.0.0.1 at 2018-08-30 16:12:11 +0200
+Processing by BlogpostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering blogposts/show.html.erb within layouts/application
+  Rendered blogposts/show.html.erb within layouts/application (27.9ms)
+Completed 500 Internal Server Error in 108ms (ActiveRecord: 1.0ms)
+
+
+  
+ActionView::Template::Error (The asset "" is not present in the asset pipeline.):
+    17: 
+    18: <p>
+    19:   <strong>Image:</strong>
+    20:   <%= image_tag(@blogpost.image, width:300) if @blogpost.image.present? %>
+    21: </p>
+    22: 
+    23: <p>
+  
+app/views/blogposts/show.html.erb:20:in `_app_views_blogposts_show_html_erb__200582984_80353440'
+Started GET "/blogposts/3" for 127.0.0.1 at 2018-08-30 16:14:19 +0200
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by BlogpostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering blogposts/show.html.erb within layouts/application
+  Rendered blogposts/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 524ms (Views: 466.0ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:14:42 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (40.5ms)
+Completed 200 OK in 199ms (Views: 173.2ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/blogposts/3/edit" for 127.0.0.1 at 2018-08-30 16:14:48 +0200
+Processing by BlogpostsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering blogposts/edit.html.erb within layouts/application
+  Rendered blogposts/_form.html.erb (26.9ms)
+  Rendered blogposts/edit.html.erb within layouts/application (46.2ms)
+Completed 200 OK in 207ms (Views: 182.8ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/blogposts/new" for 127.0.0.1 at 2018-08-30 16:14:57 +0200
+Processing by BlogpostsController#new as HTML
+  Rendering blogposts/new.html.erb within layouts/application
+  Rendered blogposts/_form.html.erb (4.0ms)
+  Rendered blogposts/new.html.erb within layouts/application (24.0ms)
+Completed 200 OK in 199ms (Views: 177.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts/1/edit" for 127.0.0.1 at 2018-08-30 16:15:08 +0200
+Processing by BlogpostsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogposts/edit.html.erb within layouts/application
+  Rendered blogposts/_form.html.erb (4.0ms)
+  Rendered blogposts/edit.html.erb within layouts/application (23.3ms)
+Completed 200 OK in 186ms (Views: 163.3ms | ActiveRecord: 1.0ms)
+
+
+Started PATCH "/blogposts/1" for 127.0.0.1 at 2018-08-30 16:15:22 +0200
+Processing by BlogpostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"T6YAuuy0EOmKqq+cqsTAS0CZqpCazwG5F5E+vquDO9GpKqYW5NyryssYQxXbvV21U0PvUC3CzUpO0EU68TvJxA==", "blogpost"=>{"title"=>"How I Started Programming", "author"=>"Bettina", "date(1i)"=>"2018", "date(2i)"=>"8", "date(3i)"=>"30", "image"=>#<ActionDispatch::Http::UploadedFile:0xb86d6d0 @tempfile=#<Tempfile:C:/Users/betti/AppData/Local/Temp/RackMultipart20180830-5712-ybcn7.jpg>, @original_filename="atelierfest-158 Kopie.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"blogpost[image]\"; filename=\"atelierfest-158 Kopie.jpg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"Programming is super addictive. Once you have started, you cannot stop anymore. I recommend everyone to learn programming. "}, "commit"=>"Update Blogpost", "id"=>"1"}
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "blogposts" SET "image" = $1, "updated_at" = $2 WHERE "blogposts"."id" = $3[0m  [["image", "atelierfest-158_Kopie.jpg"], ["updated_at", "2018-08-30 14:15:22.832357"], ["id", 1]]
+  [1m[35m (7.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/blogposts/1
+Completed 302 Found in 71ms (ActiveRecord: 7.5ms)
+
+
+Started GET "/blogposts/1" for 127.0.0.1 at 2018-08-30 16:15:22 +0200
+Processing by BlogpostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogposts/show.html.erb within layouts/application
+  Rendered blogposts/show.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 159ms (Views: 132.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:15:26 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 171ms (Views: 153.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts/2/edit" for 127.0.0.1 at 2018-08-30 16:15:36 +0200
+Processing by BlogpostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering blogposts/edit.html.erb within layouts/application
+  Rendered blogposts/_form.html.erb (4.0ms)
+  Rendered blogposts/edit.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 191ms (Views: 166.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:15:40 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 166ms (Views: 145.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:22:23 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 6205ms (Views: 6183.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:23:13 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 4914ms (Views: 4895.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:24:02 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 183ms (Views: 162.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:24:05 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (1.1ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (6.9ms)
+Completed 200 OK in 184ms (Views: 162.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:24:05 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 173ms (Views: 144.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:26:54 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 166ms (Views: 145.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/ideas" for 127.0.0.1 at 2018-08-30 16:27:00 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/ideas"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:27:08 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 158ms (Views: 136.5ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:27:28 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.7ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 159ms (Views: 137.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:27:33 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 149ms (Views: 130.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:27:35 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 145ms (Views: 126.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-30 16:27:38 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (3.0ms)
+Completed 200 OK in 47ms (Views: 25.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2018-08-30 16:27:38 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/RailsInstaller/Ruby2.3.3/lib/ruby/gems/2.3.0/gems/railties-5.1.6/lib/rails/templates/rails/welcome/index.html.erb (2.0ms)
+Completed 200 OK in 48ms (Views: 25.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts/2/edit" for 127.0.0.1 at 2018-08-30 16:27:47 +0200
+Processing by BlogpostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering blogposts/edit.html.erb within layouts/application
+  Rendered blogposts/_form.html.erb (3.0ms)
+  Rendered blogposts/edit.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 174ms (Views: 151.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:27:50 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 149ms (Views: 127.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:28:17 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 176ms (Views: 155.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:28:39 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.7ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 4918ms (Views: 4898.2ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:29:07 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (4.0ms)
+Completed 200 OK in 4873ms (Views: 4853.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:30:42 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (1.3ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 4954ms (Views: 4932.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:34:08 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 151ms (Views: 132.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:36:16 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (1.3ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 5129ms (Views: 5106.4ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:36:34 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 4974ms (Views: 4951.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:37:03 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 4884ms (Views: 4864.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:37:17 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 5019ms (Views: 4991.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:41:51 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 157ms (Views: 135.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts/new" for 127.0.0.1 at 2018-08-30 16:42:30 +0200
+Processing by BlogpostsController#new as HTML
+  Rendering blogposts/new.html.erb within layouts/application
+  Rendered blogposts/_form.html.erb (3.0ms)
+  Rendered blogposts/new.html.erb within layouts/application (22.9ms)
+Completed 200 OK in 175ms (Views: 156.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:42:34 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 180ms (Views: 159.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts/3" for 127.0.0.1 at 2018-08-30 16:43:44 +0200
+Processing by BlogpostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering blogposts/show.html.erb within layouts/application
+  Rendered blogposts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 162ms (Views: 140.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts/1" for 127.0.0.1 at 2018-08-30 16:44:38 +0200
+Processing by BlogpostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogposts/show.html.erb within layouts/application
+  Rendered blogposts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 151ms (Views: 127.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:45:30 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 158ms (Views: 135.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts/1" for 127.0.0.1 at 2018-08-30 16:45:50 +0200
+Processing by BlogpostsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering blogposts/show.html.erb within layouts/application
+  Rendered blogposts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 157ms (Views: 132.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts/2" for 127.0.0.1 at 2018-08-30 16:45:54 +0200
+Processing by BlogpostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering blogposts/show.html.erb within layouts/application
+  Rendered blogposts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 153ms (Views: 128.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts/2/edit" for 127.0.0.1 at 2018-08-30 16:46:02 +0200
+Processing by BlogpostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering blogposts/edit.html.erb within layouts/application
+  Rendered blogposts/_form.html.erb (3.0ms)
+  Rendered blogposts/edit.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 176ms (Views: 154.4ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/blogposts/2" for 127.0.0.1 at 2018-08-30 16:46:23 +0200
+Processing by BlogpostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KdiIuemsQym+s0DgfCP19G8xafeKlki2BRVVoIf1QJjahD8pj1XZ0re57unCZ8Vv+51OWeq+ivxmW9qH1IvH6Q==", "blogpost"=>{"title"=>"Travelling in Zimbabwe", "author"=>"Bettina", "date(1i)"=>"2018", "date(2i)"=>"8", "date(3i)"=>"30", "image"=>#<ActionDispatch::Http::UploadedFile:0xc0fa7b8 @tempfile=#<Tempfile:C:/Users/betti/AppData/Local/Temp/RackMultipart20180830-5712-svcpm4.JPG>, @original_filename="DSC03167.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"blogpost[image]\"; filename=\"DSC03167.JPG\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"Zimbabwe is an amazing country. You can see a lot of elephants, lions and tigers there. Go there and explore! haha."}, "commit"=>"Update Blogpost", "id"=>"2"}
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "blogposts" SET "image" = $1, "updated_at" = $2 WHERE "blogposts"."id" = $3[0m  [["image", "DSC03167.JPG"], ["updated_at", "2018-08-30 14:46:23.229801"], ["id", 2]]
+  [1m[35m (9.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/blogposts/2
+Completed 302 Found in 63ms (ActiveRecord: 9.6ms)
+
+
+Started GET "/blogposts/2" for 127.0.0.1 at 2018-08-30 16:46:23 +0200
+Processing by BlogpostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering blogposts/show.html.erb within layouts/application
+  Rendered blogposts/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 153ms (Views: 130.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts/2/edit" for 127.0.0.1 at 2018-08-30 16:46:28 +0200
+Processing by BlogpostsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering blogposts/edit.html.erb within layouts/application
+  Rendered blogposts/_form.html.erb (3.0ms)
+  Rendered blogposts/edit.html.erb within layouts/application (25.3ms)
+Completed 200 OK in 178ms (Views: 153.0ms | ActiveRecord: 0.0ms)
+
+
+Started PATCH "/blogposts/2" for 127.0.0.1 at 2018-08-30 16:46:37 +0200
+Processing by BlogpostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mF148p5M57sI9APq3QDvddXgaIA6M990szsPbkRa4ZRrAc9i+LV9QAH+reNjRN/uQUxPLlobHT7QdYBJFyRm5Q==", "blogpost"=>{"title"=>"Travelling in Zimbabwe", "author"=>"Bettina", "date(1i)"=>"2018", "date(2i)"=>"8", "date(3i)"=>"30", "image"=>#<ActionDispatch::Http::UploadedFile:0x3055a58 @tempfile=#<Tempfile:C:/Users/betti/AppData/Local/Temp/RackMultipart20180830-5712-1jy3orl.JPG>, @original_filename="DSC03169.JPG", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"blogpost[image]\"; filename=\"DSC03169.JPG\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"Zimbabwe is an amazing country. You can see a lot of elephants, lions and tigers there. Go there and explore! haha."}, "commit"=>"Update Blogpost", "id"=>"2"}
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  [1m[33mUPDATE "blogposts" SET "image" = $1, "updated_at" = $2 WHERE "blogposts"."id" = $3[0m  [["image", "DSC03169.JPG"], ["updated_at", "2018-08-30 14:46:37.911821"], ["id", 2]]
+  [1m[35m (14.2ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/blogposts/2
+Completed 302 Found in 64ms (ActiveRecord: 15.2ms)
+
+
+Started GET "/blogposts/2" for 127.0.0.1 at 2018-08-30 16:46:37 +0200
+Processing by BlogpostsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering blogposts/show.html.erb within layouts/application
+  Rendered blogposts/show.html.erb within layouts/application (2.0ms)
+Completed 200 OK in 156ms (Views: 131.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts/3" for 127.0.0.1 at 2018-08-30 16:46:41 +0200
+Processing by BlogpostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering blogposts/show.html.erb within layouts/application
+  Rendered blogposts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 148ms (Views: 124.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts/3/edit" for 127.0.0.1 at 2018-08-30 16:46:43 +0200
+Processing by BlogpostsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBlogpost Load (0.4ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering blogposts/edit.html.erb within layouts/application
+  Rendered blogposts/_form.html.erb (3.0ms)
+  Rendered blogposts/edit.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 182ms (Views: 158.0ms | ActiveRecord: 0.4ms)
+
+
+Started PATCH "/blogposts/3" for 127.0.0.1 at 2018-08-30 16:46:57 +0200
+Processing by BlogpostsController#update as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j1cP2d/lb7/QAeffQqZZlCUOdtduKhB8LCbqwsEgCps8u66BjNboadDFd/YU6G77Pjn5QNDQcJC2cPSCIv8fdQ==", "blogpost"=>{"title"=>"How I Created This Blog", "author"=>"Bettina", "date(1i)"=>"2018", "date(2i)"=>"8", "date(3i)"=>"30", "image"=>#<ActionDispatch::Http::UploadedFile:0x96e0520 @tempfile=#<Tempfile:C:/Users/betti/AppData/Local/Temp/RackMultipart20180830-5712-k2ayrq.jpg>, @original_filename="Fotoshooting Pardy Luki II.jpg", @content_type="image/jpeg", @headers="Content-Disposition: form-data; name=\"blogpost[image]\"; filename=\"Fotoshooting Pardy Luki II.jpg\"\r\nContent-Type: image/jpeg\r\n">, "content"=>"Creating this blog started with a major problem: my laptop just could not connect to the database. It was a Windows-specific problem. So: should I buy a Mac?!"}, "commit"=>"Update Blogpost", "id"=>"3"}
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35m (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.0ms)[0m  [1m[33mUPDATE "blogposts" SET "image" = $1, "updated_at" = $2 WHERE "blogposts"."id" = $3[0m  [["image", "Fotoshooting_Pardy_Luki_II.jpg"], ["updated_at", "2018-08-30 14:46:57.283150"], ["id", 3]]
+  [1m[35m (1.0ms)[0m  [1m[35mCOMMIT[0m
+Redirected to http://localhost:3000/blogposts/3
+Completed 302 Found in 48ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts/3" for 127.0.0.1 at 2018-08-30 16:46:57 +0200
+Processing by BlogpostsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT  "blogposts".* FROM "blogposts" WHERE "blogposts"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering blogposts/show.html.erb within layouts/application
+  Rendered blogposts/show.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 167ms (Views: 141.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:47:05 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (1.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 180ms (Views: 158.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 16:50:51 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  [1m[36mBlogpost Load (0.0ms)[0m  [1m[34mSELECT "blogposts".* FROM "blogposts"[0m
+  Rendered blogposts/index.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 170ms (Views: 148.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 17:12:01 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  Rendered blogposts/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 291ms (Views: 270.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogpost-examle-image.jpg" for 127.0.0.1 at 2018-08-30 17:12:01 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/blogpost-examle-image.jpg"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 17:12:43 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  Rendered blogposts/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 169ms (Views: 149.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/blogpost-examle-image.jpg" for 127.0.0.1 at 2018-08-30 17:12:43 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/images/blogpost-examle-image.jpg"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 17:13:19 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  Rendered blogposts/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 163ms (Views: 144.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 17:13:34 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  Rendered blogposts/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 166ms (Views: 146.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 17:13:36 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  Rendered blogposts/index.html.erb within layouts/application (0.0ms)
+Completed 200 OK in 160ms (Views: 140.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 17:21:48 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  Rendered blogposts/index.html.erb within layouts/application (1.0ms)
+Completed 200 OK in 160ms (Views: 139.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/images/blogpost-examle-image.jpg" for 127.0.0.1 at 2018-08-30 17:21:48 +0200
+  
+ActionController::RoutingError (No route matches [GET] "/images/blogpost-examle-image.jpg"):
+  
+actionpack (5.1.6) lib/action_dispatch/middleware/debug_exceptions.rb:63:in `call'
+web-console (3.6.2) lib/web_console/middleware.rb:135:in `call_app'
+web-console (3.6.2) lib/web_console/middleware.rb:30:in `block in call'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `catch'
+web-console (3.6.2) lib/web_console/middleware.rb:20:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+railties (5.1.6) lib/rails/rack/logger.rb:36:in `call_app'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `block in call'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:26:in `tagged'
+activesupport (5.1.6) lib/active_support/tagged_logging.rb:69:in `tagged'
+railties (5.1.6) lib/rails/rack/logger.rb:24:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/request_id.rb:25:in `call'
+rack (2.0.5) lib/rack/method_override.rb:22:in `call'
+rack (2.0.5) lib/rack/runtime.rb:22:in `call'
+activesupport (5.1.6) lib/active_support/cache/strategy/local_cache_middleware.rb:27:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/executor.rb:12:in `call'
+actionpack (5.1.6) lib/action_dispatch/middleware/static.rb:125:in `call'
+rack (2.0.5) lib/rack/sendfile.rb:111:in `call'
+railties (5.1.6) lib/rails/engine.rb:522:in `call'
+puma (3.12.0) lib/puma/configuration.rb:225:in `call'
+puma (3.12.0) lib/puma/server.rb:658:in `handle_request'
+puma (3.12.0) lib/puma/server.rb:472:in `process_client'
+puma (3.12.0) lib/puma/server.rb:332:in `block in run'
+puma (3.12.0) lib/puma/thread_pool.rb:133:in `block in spawn_thread'
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 17:27:12 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  Rendered blogposts/index.html.erb within layouts/application (255.2ms)
+Completed 200 OK in 410ms (Views: 389.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 17:28:38 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  Rendered blogposts/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 160ms (Views: 139.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/blogposts" for 127.0.0.1 at 2018-08-30 17:31:18 +0200
+Processing by BlogpostsController#index as HTML
+  Rendering blogposts/index.html.erb within layouts/application
+  Rendered blogposts/index.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 167ms (Views: 145.4ms | ActiveRecord: 0.0ms)
+
+
