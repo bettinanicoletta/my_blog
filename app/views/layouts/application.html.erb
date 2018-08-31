@@ -13,7 +13,7 @@
 
   <body>
     <div class="first-title">
-      <h1> From Around The Globe </h1>
+      <h1> From Around the Globe </h1>
     </div>
 
 
@@ -26,10 +26,12 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto own-ul">
           <li class="nav-item active">
-            <a class="nav-link" href="#">Blogposts <span class="sr-only">(current)</span></a>
+
+            <%= link_to 'Blogposts', blogposts_path, class: "nav-link" %>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">About</a>
+            <%= link_to 'About', "pages/about", class: "nav-link" %>
+
           </li>
         </ul>
 
