@@ -185,7 +185,7 @@ PLATFORMS
   x86-mingw32
 
 DEPENDENCIES
-  bootstrap
+  bootstrap (~> 4.1.0)
   byebug
   capybara (~> 2.13)
   carrierwave

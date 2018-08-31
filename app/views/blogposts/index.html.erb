@@ -1,15 +1,18 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Blogposts</h1>
 
 
 
 
-    <div class="card" style="width: 18rem;">
-      <%= image_tag("blogpost-examle-image.jpg", :alt => "Blogpost image", :class => "card-img-top") %>
-      <div class="card-body">
-        <h5 class="card-title">Blog Title</h5>
-        <p class="card-text">a short description of the blog</p>
-        <a href="#" class="btn btn-primary">Read more</a>
+
+    <% @blogposts.each do |blogpost| %>
+      <div class="card own-card-style" style="width: 300px"; style="height: 800px" >
+        <%= image_tag(blogpost.image, :alt => "Blogpost image", :class => "card-img-top", :style => "height: 180px") %>
+        <div class="card-body">
+          <h5 class="card-title own-title"> <%=blogpost.title%> </h5>
+          <p class="card-text own-text"> <%=blogpost.content[0..30]%> </p>
+          <%= link_to 'Read more', blogpost, class: "btn btn-default own-button" %>
+        </div>
       </div>
-    </div>
+
+    <% end %>
